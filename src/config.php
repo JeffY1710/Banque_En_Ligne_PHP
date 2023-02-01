@@ -2,10 +2,10 @@
 
 $config = [];
 $config['db'] = [
-	'name' => '',
-	'host' => '',
+	'name' => 'Banque',
+	'host' => 'localhost',
 	'port' => 8889,
-	'user' => '',
-	'pass' => ''
+	'user' => 'root',
+	'pass' => 'root'
 ];
 
