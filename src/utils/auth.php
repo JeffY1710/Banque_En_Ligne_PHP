@@ -7,6 +7,10 @@ function get_session_user() {
 	return false;
 }
 
+function verified() {
+	if ()
+}
+
 function get_user_by_id($id) {
 	global $db;
 	$query = $db->prepare('SELECT * FROM users WHERE id = ?');

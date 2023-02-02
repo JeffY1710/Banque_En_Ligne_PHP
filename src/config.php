@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 $config = [];
 $config['db'] = [
@@ -6,6 +6,5 @@ $config['db'] = [
 	'host' => 'localhost',
 	'port' => 8889,
 	'user' => 'root',
-	'pass' => 'root'
+	'pass' => ''
 ];
-

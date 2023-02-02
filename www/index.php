@@ -9,10 +9,12 @@ if ($user_id === false) {
 
 
 $page_title = 'Accueil';
-require_once __DIR__ . '/../src/partials/header.php'; ?>
+require_once __DIR__ . '/../src/partials/head.php'; ?>
+
 <body>
 	<?php require_once __DIR__ . '/../src/partials/menu.php'; ?>
 	<?php require_once __DIR__ . '/../src/pages/home.php'; ?>
 	<?php require_once __DIR__ . '/../src/partials/footer.php'; ?>
 </body>
+
 </html>

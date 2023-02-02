@@ -18,7 +18,7 @@ if (empty($_POST['password']) || ($_POST['password'] !== $_POST['cpassword'])) {
 	set_errors('Message invalide', '/register.php');
 }
 
-$_POST['pseudo'] = htmlentities($_POST['pseudo'],  ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML5);
+$_POST['pseudo'] = htmlentities($_POST['pseudo'], ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML5);
 $_POST['password'] = hash('sha256', $_POST['password']);
 
 // retirer cpassword de $_POST
@@ -29,7 +29,13 @@ unset($_POST['cpassword']);
 // die();
 
 $query = $db->prepare('INSERT INTO users (prenom, email, password) VALUES(:prenom, :email, :password)');
-$query->execute($_POST);
+$query->execute(
+	[
+		'prenom' => $_POST['pseudo'],
+		'email' => $_POST['email'],
+		'password' => $_POST['password']
+	]
+);
 
 
 

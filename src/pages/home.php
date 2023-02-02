@@ -1,9 +1,10 @@
 <div>
-	Email :  <?php echo $user['email']; ?><br>
+	Email :
+	<?php echo $user['email']; ?><br>
 	<div class="main">
 		<div class="deposit">
 			<form action="/actions/deposit.php" method="post">
-				Deposit : <input type="number" placeholder="montant"min="0">
+				Deposit : <input type="number" placeholder="montant" min="0">
 				<select name="symbol">
 					<option value="EUR">EUR</option>
 					<option value="USD">USD</option>
@@ -14,7 +15,7 @@
 		</div>
 		<div class="withdraw">
 			<form action="/actions/withdraw.php" method="post">
-				Withdraw : <input type="number"  placeholder="montant" 	min="0">
+				Withdraw : <input type="number" placeholder="montant" min="0">
 				<select name="symbol">
 					<option value="EUR">EUR</option>
 					<option value="USD">USD</option>
@@ -25,7 +26,7 @@
 		</div>
 		<div class="trans">
 			<form action="/actions/transfer.php" method="post">
-				Tranfer : <input type="number"  placeholder="montant" 	min="0">
+				Tranfer : <input type="number" placeholder="montant" min="0">
 				<select name="symbol">
 					<option value="EUR">EUR</option>
 					<option value="USD">USD</option>
@@ -36,7 +37,7 @@
 		</div>
 	</div>
 	<div class="transactions">
-			<p>transactions :</p><br>
-		</div>
+		<p>transactions :</p><br>
+	</div>
 
 </div>
