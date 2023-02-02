@@ -1,3 +1,7 @@
+<head>
+    <link rel="stylesheet" href="transac.css">
+</head>
+
 <div class="main">
     <div class="deposit">
         <form action="/actions/deposit.php" method="post">
