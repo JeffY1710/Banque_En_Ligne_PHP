@@ -6,5 +6,5 @@ $config['db'] = [
 	'host' => 'localhost',
 	'port' => 8889,
 	'user' => 'root',
-	'pass' => ''
+	'pass' => 'root'
 ];
