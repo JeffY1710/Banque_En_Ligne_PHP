@@ -15,3 +15,4 @@ if ($user_id !== false) {
 }
 
 $verify = $user['verified'];
+$role = $user['role'];

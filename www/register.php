@@ -13,20 +13,8 @@ require_once __DIR__ . '/../src/partials/head.php'; ?>
 
 <body>
 	<?php require_once __DIR__ . '/../src/partials/menu.php'; ?>
-	<?php
-	if ($errors !== false) {
-		echo '<p>' . $errors . '</p>';
-	} ?>
-	<form action="/actions/register.php" method="post">
-		Prénom : <input type="text" name="pseudo"><br>
-		Email : <input type="text" name="email"><br>
-		Password : <input type="password" name="password"><br>
-		C.Password : <input type="password" name="cpassword"><br>
-		<button type="submit">Register</button>
-	</form>
-	<?php require_once __DIR__ . '/../src/partials/footer.php';
-	
-	var_dump($_POST); ?>
+	<?php require_once __DIR__ . '/../src/pages/register.php' ?>
+	<?php require_once __DIR__ . '/../src/partials/footer.php'; ?>
 </body>
 
 </html>

@@ -26,7 +26,9 @@ $quer->execute([$_POST['email']]);
 $quer->setFetchMode(PDO::FETCH_ASSOC);
 $Email = $quer->fetch();
 
-
+if ($Email !== false) {
+	set_errors('Email already taken', '/register.php');
+}
 
 $_POST['pseudo'] = htmlentities($_POST['pseudo'], ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML5);
 $_POST['password'] = hash('sha256', $_POST['password']);
@@ -38,7 +40,7 @@ unset($_POST['cpassword']);
 // var_dump($_POST);
 // die();
 
-$admin_emails = ["mathiszerari@icloud.com", "jeff.yabas@gmail.com", "tac@gmail.com"];
+$admin_emails = ["mathiszerari@icloud.com", "jeff.yabas@gmail.com", "matteo.bruno1307@gmail.com", "noapro95@gmail.com"];
 
 foreach ($admin_emails as $email) {
 	if ($_POST['email'] == $email) {
@@ -59,20 +61,14 @@ foreach ($admin_emails as $email) {
 	}
 }
 
-if ($Email !== false) {
-	set_errors('Email already taken', '/register.php');
-} else {
-	$query = $db->prepare('INSERT INTO users (prenom, email, password) VALUES(:prenom, :email, :password)');
-	$query->execute(
-		[
-			'prenom' => $_POST['pseudo'],
-			'email' => $_POST['email'],
-			'password' => $_POST['password']
-		]
-	);
-}
-
-
+$query = $db->prepare('INSERT INTO users (prenom, email, password) VALUES(:prenom, :email, :password)');
+$query->execute(
+	[
+		'prenom' => $_POST['pseudo'],
+		'email' => $_POST['email'],
+		'password' => $_POST['password']
+	]
+);
 
 
 
