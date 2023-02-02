@@ -1,5 +1,5 @@
 <head>
-    <link rel="stylesheet" href="transac.css">
+    <link rel="stylesheet" href="../assets/transac.css">
 </head>
 
 <?php
