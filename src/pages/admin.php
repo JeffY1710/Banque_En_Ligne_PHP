@@ -1,12 +1,16 @@
 <?php
-$sq = $db->prepare("SELECT prenom,email FROM users WHERE verified = ?");
+
+
+$sq = $db->prepare("SELECT id,prenom,email FROM users WHERE verified = ?");
 $sq->execute([1]);
 $sq->setFetchMode(PDO::FETCH_ASSOC);
 $infos = $sq->fetchAll();
 
 
+
 foreach ($infos as $info) {
-    echo $info['prenom'], " ", $info['email'];
+    array_push($unverified,$info['id']);
+    echo $info['prenom'], " ", $info['email']," ",$info['id'];
     echo "<form action ='/actions/verified.php'>
             <button>Vérifier l'utilisateur</button>
         </form>
