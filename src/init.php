@@ -13,3 +13,5 @@ $user = false;
 if ($user_id !== false) {
 	$user = get_user_by_id($user_id);
 }
+
+$verify = $user['verified'];
