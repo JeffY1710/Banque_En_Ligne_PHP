@@ -5,10 +5,7 @@ $sq->setFetchMode(PDO::FETCH_ASSOC);
 $infos = $sq->fetchAll();
 
 
-$i = 1;
-
 foreach ($infos as $info) {
-    echo "<div id=" . $i++ .  ">";
     echo $info['prenom'], " ", $info['email'];
     echo "<form action ='/actions/verified.php'>
             <button>Vérifier l'utilisateur</button>
