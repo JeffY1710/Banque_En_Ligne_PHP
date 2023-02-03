@@ -49,12 +49,22 @@
 						text-decoration:none;
 					">Admin</a>
 			
-					<a href="/users.php">Utilisateurs</a>
+					<a href="/users.php" style="
+								color: black;
+								margin-right: 50px;
+								font-size: 20px;
+								font-weight: bolder;
+								text-decoration:none;">Utilisateurs</a>
 				<?php } ?>
 				<?php 
 					if ($user && $role == 100) { 
 					?>
-						<a href="/upgrade.php">Upgrade user</a>
+						<a href="/upgrade.php" style="
+								color: black;
+								margin-right: 50px;
+								font-size: 20px;
+								font-weight: bolder;
+								text-decoration:none;">Upgrade user</a>
 				<?php } ?>
 				<?php
 					if ($user) {
