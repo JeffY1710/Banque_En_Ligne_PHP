@@ -1,7 +1,7 @@
 <div class="main">
     <div class="deposit">
         <form action="/actions/deposit.php" method="post">
-            Deposit : <input type="number" placeholder="montant" name="deposit" min="0">
+            Deposit : <input type="number" name="deposit" min="0">
             <select name="symbol_deposit">
                 <option value="EUR">EUR</option>
                 <option value="USD">USD</option>

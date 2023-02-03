@@ -15,7 +15,7 @@
 		<?php } ?>
 		<?php if ($user && $role>1) { ?>
 			<li>
-				<a href="/operation.php">operation</a>
+				<a href="/operation.php">Operation</a>
 			</li>
 			<li>
 				<a href="/admin.php">Admin</a>
