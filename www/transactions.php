@@ -1,3 +1,7 @@
+<head>
+    <link rel="stylesheet" href="../assets/transac.css">
+</head>
+
 <?php
 require_once __DIR__ . '/../src/init.php';
 

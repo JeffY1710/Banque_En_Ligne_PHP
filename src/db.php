@@ -7,3 +7,5 @@ try {
 } catch (Exception $e) {
 	die('Erreur MySQL. ' . $e->getMessage());
 }
+
+?>
