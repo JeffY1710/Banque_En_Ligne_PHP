@@ -20,6 +20,9 @@
 			<li>
 				<a href="/admin.php">Admin</a>
 			</li>
+			<li>
+				<a href="/users.php">Utilisateurs</a>
+			</li>
 		<?php } ?>
 		<?php if ($user && $role == 100) { ?>
 			<li>

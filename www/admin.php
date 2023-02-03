@@ -2,7 +2,7 @@
 require_once __DIR__ . '/../src/init.php';
 
 
-if ($role > 10) {
+if ($role >= 10) {
 
 	$page_title = 'Admin';
 	require_once __DIR__ . '/../src/partials/head.php'; ?>
