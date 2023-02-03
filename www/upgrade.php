@@ -1,3 +1,7 @@
+<head>
+    <link rel="stylesheet" href="../assets/maison.css">
+    <title>Admin space</title>
+</head>
 <?php
 require_once __DIR__ . '/../src/init.php';
 

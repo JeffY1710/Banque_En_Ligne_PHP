@@ -1,6 +1,5 @@
 <!-- <?php
 
-
 $sq = $db->prepare("SELECT deposit_id FROM deposit");
 $sq->execute();
 $sq->setFetchMode(PDO::FETCH_ASSOC);

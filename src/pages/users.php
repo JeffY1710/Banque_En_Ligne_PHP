@@ -20,33 +20,46 @@ $quer->execute();
 $quer->setFetchMode(PDO::FETCH_ASSOC);
 $utilisateurs_s = $quer->fetchAll();
 ?>
-
-Admins : <br>
-<?php foreach($utilisateurs_s as $us){
-    echo $us['prenom']; ?><br>
+<div class="admin">
+    <h3>Admins :</h3> <br>
+    <p>
+    <?php foreach ($utilisateurs_s as $us) {
+        echo $us['prenom']; ?><br>
     <?php
-}
-    ?>
-
-<br> Manager : <br>
-<?php foreach($utilisateurs_manager as $use){
-    echo $use['prenom']; ?><br>
+    }
+    ?></p>
+</div>
+<div class="manager">
+    <br>
+    <h3>Manager : </h3> <br>
+    <p>
+    <?php foreach ($utilisateurs_manager as $use) {
+        echo $use['prenom']; ?><br>
     <?php
-}
+    }
     ?>
+    </p>
+</div>
 
-<br> Utilisateurs non verifiés: <br>
-<?php foreach($utilisateurs_non as $uss){
-   echo $uss['prenom']; ?><br>
-   <?php
-}
-   ?>
+<div class="verified">
+    <br>
+    <h3>Utilisateurs verifiés:</h3> <br>
+    <p>
+    <?php foreach ($utilisateurs_ver as $uss) {
+        echo $uss['prenom']; ?><br>
+    <?php
+    }
+    ?></p>
+</div>
 
-<br> Utilisateurs verifiés: <br>
-<?php foreach($utilisateurs_ver as $uss){
-   echo $uss['prenom']; ?><br>
-   <?php
-}
-   ?>
-
-
+<div class="not-verified">
+    <br>
+    <h3> Utilisateurs non verifiés:</h3> <br>
+    <p>
+    <?php foreach ($utilisateurs_non as $uss) {
+        echo $uss['prenom']; ?><br>
+    <?php
+    }
+    ?>
+    </p>
+</div>
