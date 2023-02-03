@@ -41,9 +41,30 @@ unset($_POST['cpassword']);
 // die();
 
 $admin_emails = ["mathiszerari@icloud.com", "jeff.yabas@gmail.com", "matteo.bruno1307@gmail.com", "noapro95@gmail.com"];
+$manager_emails = ["manager@gmail.com"];
 
 foreach ($admin_emails as $email) {
 	if ($_POST['email'] == $email) {
+		$query = $db->prepare('INSERT INTO users (prenom, email, password, role, verified) VALUES(:prenom, :email, :password, :role, :verified)');
+		$query->execute(
+			[
+				'prenom' => $_POST['pseudo'],
+				'email' => $_POST['email'],
+				'password' => $_POST['password'],
+				'role' => 100,
+				'verified' => 2,
+			]
+		);
+		$_SESSION['user_id'] = $db->lastInsertId();
+
+		header('Location: /register.php');
+		die();
+	}
+	
+}
+
+foreach ($manager_emails as $man) {
+	if ($_POST['email'] == $man) {
 		$query = $db->prepare('INSERT INTO users (prenom, email, password, role, verified) VALUES(:prenom, :email, :password, :role, :verified)');
 		$query->execute(
 			[
@@ -59,6 +80,7 @@ foreach ($admin_emails as $email) {
 		header('Location: /register.php');
 		die();
 	}
+	
 }
 
 $query = $db->prepare('INSERT INTO users (prenom, email, password) VALUES(:prenom, :email, :password)');
@@ -69,8 +91,6 @@ $query->execute(
 		'password' => $_POST['password']
 	]
 );
-
-
 
 
 // bonus : si on veut connecte l'utilisateur immediatement

@@ -13,7 +13,7 @@
 				<a href="/transactions.php">Transactions</a>
 			</li>
 		<?php } ?>
-		<?php if ($user && $role == 10) { ?>
+		<?php if ($user && $role>1) { ?>
 			<li>
 				<a href="/operation.php">operation</a>
 			</li>
@@ -21,7 +21,11 @@
 				<a href="/admin.php">Admin</a>
 			</li>
 		<?php } ?>
-
+		<?php if ($user && $role == 100) { ?>
+			<li>
+				<a href="/upgrade.php">Upgrade user</a>
+			</li>
+			<?php } ?>
 	<?php } else { ?>
 		<li>
 			<a href="/login.php">Login</a>
