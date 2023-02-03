@@ -23,14 +23,6 @@
 						text-decoration:none;
 					">Accueil</a>
 					
-				<a href="/actions/logout.php"  style="
-						color: black;
-						margin-right: 50px;
-						font-size: 20px;
-						font-weight: bolder;
-						text-decoration:none;
-					">Logout</a>
-					
 			<?php if ($user && $verify != 1) { ?>
 				
 					<a href="/transactions.php"  style="
@@ -60,6 +52,19 @@
 						text-decoration:none;
 					">Admin</a>
 					
+			<?php } ?>
+			
+			<?php
+				if ($user) {
+			?>
+				<a href="/actions/logout.php"  style="
+						color: black;
+						margin-right: 50px;
+						font-size: 20px;
+						font-weight: bolder;
+						text-decoration:none;
+					">Logout</a>
+
 			<?php } ?>
 
 		<?php } else { ?>
