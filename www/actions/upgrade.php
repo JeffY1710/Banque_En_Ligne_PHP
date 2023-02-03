@@ -4,7 +4,7 @@ require_once __DIR__ . '/../../src/init.php';
 
 
 if (!isset($_POST['mail_destinataire'])) {
-	set_errors('Veuillez remplir les champs', '/upgrade.php');
+	set_errors('Veuillez remplir les champs','/upgrade.php');
 }
 
 
@@ -37,7 +37,7 @@ $queries->setFetchMode(PDO::FETCH_ASSOC);
 $info = $queries->fetch();
 
 if($temp_role == $info['role']){
-    set_errors('Cet utilisateur a deja ce role', '/upgrade.php');
+    set_errors('Cet utilisateur a deja ce role','/upgrade.php');
 }
 
 
@@ -51,4 +51,4 @@ if($Email !== false){
 
 
 
-header("Location : /upgrade.php");
+header("Location: /upgrade.php");
