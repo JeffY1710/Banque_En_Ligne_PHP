@@ -1,3 +1,7 @@
+<?php
+    if ($errors !== false) {
+		echo '<p>' . $errors . '</p>';
+	} ?>
 <div class="main">
     <div class="deposit">
         <form action="/actions/deposit.php" method="post">
@@ -33,7 +37,34 @@
             <button type="submit">Transfer</button><br><br>
         </form>
     </div>
-</div>
+</div><br>
 <div class="transactions">
-    <p>transactions :</p><br>
+    Mes transactions: <br><br>
+    <?php
+    $id = $user['id'];
+
+    $sq = $db->prepare("SELECT deposit_id,montant,currency FROM deposit WHERE deposit_id = ?");
+    $sq->execute([$id]);
+    $sq->setFetchMode(PDO::FETCH_ASSOC);
+    $userId = $sq->fetchAll();
+
+
+    $sql = $db->prepare("SELECT withdraw_id,montant,currency FROM withdraw WHERE withdraw_id = ?");
+    $sql->execute([$id]);
+    $sql->setFetchMode(PDO::FETCH_ASSOC);
+    $userIdr = $sql->fetchAll();
+    
+
+
+    foreach ($userId as $u) {
+        echo "Depot", " ";
+        echo $u['montant'], " ";
+        echo $u['currency'];?><br><?php
+    }
+    foreach ($userIdr as $u) {
+        echo "Retrait", " ";
+        echo $u['montant'], " ";
+        echo $u['currency'];?><br><?php
+    }
+    ?>
 </div>

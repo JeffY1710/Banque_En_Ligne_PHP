@@ -33,7 +33,7 @@
 				<?php 
 				if ($user && $role>1) { 
 				?>
-					<a href="/operation.php"  style="
+					<a href=""  style="
 						color: black;
 						margin-right: 50px;
 						font-size: 20px;

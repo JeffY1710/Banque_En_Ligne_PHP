@@ -1,21 +1,25 @@
-<?php
+<!-- <?php
 
 
-$sq = $db->prepare("SELECT prenom,email FROM users WHERE verified = 1");
+$sq = $db->prepare("SELECT deposit_id FROM deposit");
 $sq->execute();
 $sq->setFetchMode(PDO::FETCH_ASSOC);
-$infos = $sq->fetchAll();
+$userId = $sq->fetchAll();
 
+$sql = $db->prepare("SELECT id, prenom FROM users");
+$sql->execute();
+$sql->setFetchMode(PDO::FETCH_ASSOC);
+$userr = $sql->fetchAll();
 
+echo $userId[0]['deposit_id'];
+die;
 
-foreach ($infos as $info) {
-    echo $info['prenom'], " ", $info['email'];
-    echo "<form action ='/actions/verified.php'>
-            <button>Vérifier l'utilisateur</button>
-        </form>
-        <form action ='/actions/annuler.php'>
-            <button>Annuler</button><br><br>
-        </form>
-        </div>";
+foreach ($userId as $u) {
+    foreach ($userr as $i) {
+        if($u == $i){
+            
+        }
+    }
 }
-?>
+
+?> -->

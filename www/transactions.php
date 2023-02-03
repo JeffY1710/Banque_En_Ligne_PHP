@@ -6,7 +6,9 @@
 require_once __DIR__ . '/../src/init.php';
 
 
-if ($role > 10) {
+if ($user) {
+
+	$errors = get_errors();
 
 	$page_title = 'Transaction';
 	require_once __DIR__ . '/../src/partials/head.php';
