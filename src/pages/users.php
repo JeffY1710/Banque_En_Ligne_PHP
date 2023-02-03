@@ -1,9 +1,14 @@
 <?php
 
-$sq = $db->prepare("SELECT * FROM users WHERE role = 1");
+$sq = $db->prepare("SELECT * FROM users WHERE role = 1 AND verified = 1");
 $sq->execute();
 $sq->setFetchMode(PDO::FETCH_ASSOC);
-$utilisateurs = $sq->fetchAll();
+$utilisateurs_non = $sq->fetchAll();
+
+$sq = $db->prepare("SELECT * FROM users WHERE role = 1 AND verified = 2");
+$sq->execute();
+$sq->setFetchMode(PDO::FETCH_ASSOC);
+$utilisateurs_ver = $sq->fetchAll();
 
 $sql = $db->prepare("SELECT * FROM users WHERE role = 10");
 $sql->execute();
@@ -30,8 +35,15 @@ Admins : <br>
 }
     ?>
 
-<br> Utilisateurs : <br>
-<?php foreach($utilisateurs as $uss){
+<br> Utilisateurs non verifiés: <br>
+<?php foreach($utilisateurs_non as $uss){
+   echo $uss['prenom']; ?><br>
+   <?php
+}
+   ?>
+
+<br> Utilisateurs verifiés: <br>
+<?php foreach($utilisateurs_ver as $uss){
    echo $uss['prenom']; ?><br>
    <?php
 }
